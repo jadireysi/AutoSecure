@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización de Seguro de Auto - Inversiones Vásquez</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="paginaPrincipal.css">
+    <style>
+        .quote-form {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            margin-top: 100px;
+            animation: fadeInUp 0.8s ease;
+            border: 1px solid rgba(40, 167, 69, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #1a472a, #28a745);
+        }
+
+        .quote-form h2 {
+            color: #1a472a;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .quote-form h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #28a745;
+            border-radius: 2px;
+        }
+
+        .form-label {
+            color: #1a472a;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #ffffff;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .form-check {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .form-check:hover {
+            background: rgba(40, 167, 69, 0.05);
+        }
+
+        .form-check-input {
+            width: 1.2em;
+            height: 1.2em;
+            margin-top: 0.2em;
+            cursor: pointer;
+        }
+
+        .form-check-input:checked {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .form-check-label {
+            color: #495057;
+            font-weight: 500;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, #1a472a, #28a745);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(45deg, #28a745, #1a472a);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);
+        }
+
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .btn-submit:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quote-form {
+                padding: 2rem;
+                margin-top: 80px;
+            }
+
+            .quote-form h2 {
+                font-size: 1.8rem;
+            }
+
+            .form-control, .form-select {
+                padding: 0.8rem;
+            }
+
+            .btn-submit {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="inversionesimg-removebg-preview.png" alt=""> AutoSecure
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cotizacion.html">Cotizar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="quote-form">
+                    <h2>Cotiza tu Seguro de Auto</h2>
+                    <form action="cotizacion.php" method="POST">
+                        <div class="mb-3">
+                            <label for="marca" class="form-label">Marca del Vehículo</label>
+                            <select class="form-select form-control" id="marca" name="marca" required>
+                                <option value="">Seleccione una marca</option>
+                                <option value="BAO">BAO</option>
+                                <option value="BAC">BAC</option>
+                                <option value="Baojun">Baojun</option>
+                                <option value="Bentley">Bentley</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Bugatti">Bugatti</option>
+                                <option value="Buick">Buick</option>
+                                <option value="BYD">BYD</option>
+                                <option value="Dodge">Dodge</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="FIAT">FIAT</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Genesis">Genesis</option>
+                                <option value="GMC">GMC</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Infiniti">Infiniti</option>
+                                <option value="Jaguar">Jaguar</option>
+                                <option value="Jeep">Jeep</option>
+                                <option value="KIA">KIA</option>
+                                <option value="Lamborghini">Lamborghini</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Lexus">Lexus</option>
+                                <option value="Lincoln">Lincoln</option>
+                                <option value="Lotus">Lotus</option>
+                                <option value="Maserati">Maserati</option>
+                                <option value="Mazda">Mazda</option>
+                                <option value="McLaren">McLaren</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Mini">Mini</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Porsche">Porsche</option>
+                                <option value="Subaru">Subaru</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Tesla">Tesla</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Volvo">Volvo</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modelo" class="form-label">Modelo del Auto</label>
+                            <input type="text" class="form-control" id="modelo" name="modelo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="anio" class="form-label">Año</label>
+                            <input type="number" class="form-control" id="anio" name="anio" min="1900" max="2024" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="costo" class="form-label">Costo del Vehículo (DOP)</label>
+                            <input type="number" class="form-control" id="costo" name="costo" min="0" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tipo de Cobertura</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="cobertura" id="basica" value="basica" required>
+                                <label class="form-check-label" for="basica">
+                                    Básica - Responsabilidad Civil
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="cobertura" id="intermedia" value="intermedia">
+                                <label class="form-check-label" for="intermedia">
+                                    Intermedia - Daños a Terceros + Robo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="cobertura" id="completa" value="completa">
+                                <label class="form-check-label" for="completa">
+                                    Completa - Todo Riesgo
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">Solicitar Cotización</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

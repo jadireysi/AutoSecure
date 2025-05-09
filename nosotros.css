@@ -1,0 +1,239 @@
+.about-hero {
+    background: linear-gradient(45deg, rgba(26, 71, 42, 0.9), rgba(45, 90, 39, 0.8)),
+                url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 60px;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.about-hero p {
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.about-hero .lead {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.mission-vision {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.mission-card, .vision-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    height: 100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-10px);
+}
+
+.mission-card h2, .vision-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+   
+}       
+
+.distinctions {
+    padding: 80px 0;
+    background: rgb(240, 244, 238);
+}
+
+.distinction-card {
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.distinction-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.distinction-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.closing-statement h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border: 5px solid var(--accent-color);
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgba(26, 71, 42, 0.9), rgba(54, 93, 49, 0.8));
+    color: white;
+    position: relative;
+    transform: translateY(-30px) ;
+  
+}
+
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero .lead {
+        font-size: 1.1rem;
+    }
+    
+    .mission-card, .vision-card {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Añadir las animaciones keyframes si no existen */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-info {
+    padding: 3rem 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    
+    
+}
+
+.contact-card h2 {
+    color: #1a472a;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #28a745;
+    border-radius: 2px;
+}
+
+.contact-details {
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.1);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #28a745;
+    margin-right: 1rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #495057;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    color: #495057;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #28a745;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+}
+
+.social-links i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        justify-content: center;
+    }
+}

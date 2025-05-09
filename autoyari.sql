@@ -1,0 +1,13 @@
+
+CREATE DATABASE IF NOT EXISTS autoyari;
+USE autoyari;
+
+CREATE TABLE IF NOT EXISTS cotizaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    modelo VARCHAR(100) NOT NULL,
+    edicion VARCHAR(100) NOT NULL,
+    anio INT NOT NULL,
+    costo DECIMAL(10, 2) NOT NULL,
+    cotizacion DECIMAL(10, 2) NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
